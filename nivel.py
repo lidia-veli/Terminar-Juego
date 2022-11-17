@@ -4,11 +4,11 @@ from juego import jugar
 
 def jugar_nivel_facil():
     min, max = 0, 100
-    jugar(min,max)
+    return jugar(min,max)
     
 def jugar_nivel_intermedio():
     min, max = 0, 1000
-    jugar(min,max)
+    return jugar(min,max)
 
 def jugar_nivel_avanzado():
     min, max = 0, 1000000
@@ -20,7 +20,8 @@ def jugar_nivel_experto():
 
 
 def jugar_con_niveles():
-    nivel = pedir_nivel_juego()
+    #le preguntamos al usuario el nivel de dificultad que desea
+    nivel = pedir_nivel_juego() 
 
     if nivel == 1:
         jugar_nivel_facil()
