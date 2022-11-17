@@ -132,12 +132,13 @@ def jugar(min,max):
     '''
     Funcion que modeliza jugar al juego
     '''
-    numero = pedir_entrada_del_numero_incognita(min, max)
-        
+            
     if pedir_entrada_si_o_no("¿Quieres jugar con ayuda? "): #si el usuario quiere ayuda
+            numero = pedir_entrada_del_numero_incognita(min, max)
             jugar_una_partida_con_ayuda(numero, min, max)
     
     else: #si no quiere ayuda
+            numero = pedir_entrada_del_numero_incognita(min, max)
             jugar_una_partida(numero, min, max)
 
 
