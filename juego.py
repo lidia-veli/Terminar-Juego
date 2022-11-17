@@ -10,9 +10,11 @@ from entrada.numero import (
 )
 
 #----------------------------#2# DECLARACION VARIABLES
+#c = 0 #contador de numero intentos
 
 #----------------------------#3# DEFINICION FUNCIONES
 
+#REALIZAR UN INTENTO
 def jugar_una_vez(numero, min, max):
     '''
     Esta funcion modeliza jugar al juego: intentar adivinar un número en un rango
@@ -32,18 +34,15 @@ def jugar_una_vez(numero, min, max):
         max: int
             limite superior
     '''
-
     #pedir entero dentro del rango
     intento = pedir_entrada_numero_delimitado("Intenta encontrar el número", min, max)
-    
+    #c+=1 #contabilizamos el intento
     if intento < numero:
         print("Demasiado pequeño")
         victoria = False
-
     elif intento > numero:
         print("Demasiado grande")
         victoria = False
-
     else:
         print("¡Has ganado!")
         victoria = True
@@ -70,9 +69,9 @@ def jugar_una_vez_con_ayuda(numero, min, max):
         max: int
             limite superior actualizado tras el intento
     '''
-
     #pedir entero dentro del rango
     intento = pedir_entrada_numero_delimitado("Intenta encontrar el número", min, max)
+    #c += 1 #contabilizamos el intento
     if intento < numero:
         print("Demasiado pequeño")
         min = intento + 1
@@ -89,6 +88,7 @@ def jugar_una_vez_con_ayuda(numero, min, max):
     return victoria, min, max #devolvemos True si ha ganado, y los límites actualizados
 
 
+#JUGAR UNA PARTIDA
 def jugar_una_partida(numero, min, max):
     '''
     Esta funcion modeliza lo que es jugar una partida del juego.
@@ -128,11 +128,11 @@ def jugar_una_partida_con_ayuda(numero, min, max):
     return #una vez que salimos del bucle, salimos de la funcion
 
 
+#CUESTION AYUDA AL USUARIO
 def jugar(min,max):
     '''
-    Funcion que modeliza jugar al juego
+    Funcion que redirige el juego en funcion de si el usuario quiere ayuda o no
     '''
-            
     if pedir_entrada_si_o_no("¿Quieres jugar con ayuda? "): #si el usuario quiere ayuda
             numero = pedir_entrada_del_numero_incognita(min, max)
             jugar_una_partida_con_ayuda(numero, min, max)

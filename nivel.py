@@ -20,24 +20,25 @@ def jugar_nivel_experto():
 
 
 def jugar_con_niveles():
-    print("Bienvenido al juego de adivinar un número")
-    
-    if pedir_nivel_juego() == 1:
+    nivel = pedir_nivel_juego()
+
+    if nivel == 1:
         jugar_nivel_facil()
 
-    elif pedir_nivel_juego() == 2:
+    elif nivel == 2:
         jugar_nivel_intermedio()
 
-    elif pedir_nivel_juego() == 3:
+    elif nivel == 3:
         jugar_nivel_avanzado()
 
-    elif pedir_nivel_juego() == 4:
+    elif nivel == 4:
             jugar_nivel_experto()
 
 
 def jugar_a_adivinar_un_numero():
+    print("Bienvenido al juego de adivinar un número")
     while True:
         jugar_con_niveles()
-        if not pedir_entrada_si_o_no("¿Quieres jugar otra vez?"):
-            print("¡Hasta luego!")
+        if not pedir_entrada_si_o_no("¿Quieres jugar otra vez? "):
+            print("¡Hasta la próxima!")
             return
