@@ -35,11 +35,14 @@ def jugar_con_niveles():
     elif nivel == 4:
             jugar_nivel_experto()
 
+ 
 
 def jugar_a_adivinar_un_numero():
     print("Bienvenido al juego de adivinar un número")
-    while True:
+    #bucle infinito para jugar tantas veces como quiera el usuario    
+    while True: 
         jugar_con_niveles()
+               
         if not pedir_entrada_si_o_no("¿Quieres jugar otra vez? "):
             print("¡Hasta la próxima!")
             return

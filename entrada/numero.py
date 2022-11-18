@@ -49,12 +49,12 @@ def pedir_entrada_numero_delimitado(invitacion, min, max):
     entrada: int
         número entero y dentro del rango introducido por el usuario
     """
-    invitacion = "{} entre {} y {} (incluidos): ".format(invitacion, min, max)
+    invitacion = "{} entre {} y {} incluidos: ".format(invitacion, min, max)
     entrada = pedir_entrada_numero(invitacion)
 
     #bucle finito para salvar el error de introducir un numero fuera de los limites
     while entrada < min or entrada > max: #COND. SALIDA: min < entrada < max
-        print("El número debe estar entre {} y {}.".format(min, max), file=sys.stderr) #contabilizamos el error
+        print("El número debe estar entre {} y {}.".format(min,max)) #contabilizamos el error
         entrada = pedir_entrada_numero(invitacion)
     
     return entrada
@@ -88,7 +88,7 @@ def pedir_entrada_del_numero_incognita(min, max):
     -OUTPUT---------
         número entero y dentro del rango introducido por el usuario
     '''
-    return pedir_entrada_numero_delimitado("Introduce el número a adivinar",min, max)
+    return pedir_entrada_numero_delimitado("Introduce el número a adivinar", min, max)
 
 
 def pedir_nivel_juego():
@@ -102,3 +102,6 @@ def pedir_nivel_juego():
         entrada = pedir_entrada_numero(invitacion)
     
     return entrada
+
+def pedir_numero_intentos():
+    return pedir_entrada_numero("Introduce el número de intentos de los que vas a disponer: ")
